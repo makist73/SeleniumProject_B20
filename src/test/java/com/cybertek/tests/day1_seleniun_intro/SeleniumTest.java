@@ -32,7 +32,7 @@ public class SeleniumTest {
 
         Thread.sleep(1000); // stops 1 second
 
-        driver.navigate().back(); // will take the page to the previues page. Goes back
+        driver.navigate().back(); // will take the page to the previous page. Goes back
 
         Thread.sleep(1000);
         driver.navigate().forward();
@@ -42,7 +42,7 @@ public class SeleniumTest {
 
         Thread.sleep(1000);
 
-        driver.navigate().to("https://www.facebook.com");
+        driver.navigate().to("https://www.facebook.com");// load new webpage in the current browser window
 
         String pageSource=driver.getPageSource();
         System.out.println("pageSource "+pageSource);
