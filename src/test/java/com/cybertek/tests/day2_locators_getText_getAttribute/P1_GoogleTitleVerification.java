@@ -11,22 +11,22 @@ public class P1_GoogleTitleVerification {
         // TC #1: Google Title Verification
         // 1. Open Chrome browser
     // set up the browser driver
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup(); // BoniGarcia method
     //if you are using browser drivers locally, you need to use System.setProperty everytime
     //  we use WebDriverManager
 
         // open a chrome browser
         // we create an instance of the ChromeDriver, which also opens an empty browser for us
-        WebDriver driver =new ChromeDriver();
-
+        WebDriver driver = new ChromeDriver();
        // 2. Go to https://www.google.com
         driver.get("https://www.google.com");
+
 
         //  3. Verify title:
        // Expected: Google
 
         String expectedTitle="Google";
-        String actualTitle=driver.getTitle();
+        String actualTitle= driver.getTitle();
 
         if (actualTitle.equals(expectedTitle)){
             System.out.println("Title verification PASSED!");

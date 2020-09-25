@@ -44,8 +44,8 @@ public class SeleniumTest {
 
         driver.navigate().to("https://www.facebook.com");// load new webpage in the current browser window
 
-        String pageSource=driver.getPageSource();
-        System.out.println("pageSource "+pageSource);
+        //String pageSource=driver.getPageSource();
+        //System.out.println("pageSource "+pageSource);
 
       //  driver.manage().window().fullscreen();
 

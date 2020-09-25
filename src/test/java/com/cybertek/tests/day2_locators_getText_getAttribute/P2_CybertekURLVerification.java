@@ -9,8 +9,8 @@ public class P2_CybertekURLVerification {
     public static void main(String[] args) {
 
         //TC #2: Cybertek verifications
-        //1. Open Chrome browser
-   // I need to setup my browser driver
+        //1. Open Chrome browser (setup)
+
         WebDriverManager.chromedriver().setup();
 
   //To create instance of chrome browser from WebDriver.
@@ -36,7 +36,7 @@ public class P2_CybertekURLVerification {
         //4. Verify title:
         //Expected: Practice
         //-->actual title<--    -->expected title<--
-        if (driver.getTitle().equals("Practice")){
+        if (driver.getTitle().equals("Practice")){  //  using this way not suggested
             System.out.println("Title Verification PASSED!");
         }else{
             System.out.println("Title Verification FAILED!!!");
