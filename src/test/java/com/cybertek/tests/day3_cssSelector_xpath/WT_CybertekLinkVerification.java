@@ -27,8 +27,8 @@ public class WT_CybertekLinkVerification {
         // 4.Click on Retrieve password
        // driver.findElement(By.id("form_submit")).click();
 
-        WebElement retrivePasswordButton = driver.findElement(By.id("form_submit"));
-        retrivePasswordButton.click();
+        WebElement retrievePasswordButton = driver.findElement(By.id("form_submit"));
+        retrievePasswordButton.click();
 
         // 5.Verify URL contains: Expected: “email_sent”
         String expectedInUrl="email_sent";
@@ -44,10 +44,9 @@ public class WT_CybertekLinkVerification {
         // Expected: “Your e-mail’s been sent!”
 
         // verify the text
+        WebElement confirmationMessage = driver.findElement(By.name("confirmation_message"));
 
-        WebElement conformationMessage= driver.findElement(By.name("confirmation_message"));
-
-        String actualText = conformationMessage.getText();// alt+Enter: shortcut to go&write the "actualText"
+        String actualText = confirmationMessage.getText();// alt+Enter: shortcut to go&write the "actualText"
         String expectedText = "Your e-mail's been sent!";
 
         System.out.println("actualText = "+actualText);
@@ -62,7 +61,7 @@ public class WT_CybertekLinkVerification {
         }
         // verify if the web element is displayed or not
 
-        if (conformationMessage.isDisplayed()){
+        if (confirmationMessage.isDisplayed()){
             System.out.println("Conformation message is displayed. Verification PASSED!");
         }else{
             System.out.println("Conformation message is NOT displayed. Verification FAILED!!!");
