@@ -25,7 +25,7 @@ public class P1_CybertekForgotPassword {
         //WebElement homeLink= driver.findElement(By.xpath("//a[@class='nav-link']"));
 
         //b. “Forgot password” header
-        WebElement header= driver.findElement(By.xpath("//h2[.='Forgot Password']"));
+        WebElement passwordHeader= driver.findElement(By.xpath("//h2[.='Forgot Password']"));
 
         //c. “E-mail” text
         WebElement emailLabel= driver.findElement(By.xpath("//label[@for='email']"));
@@ -42,14 +42,23 @@ public class P1_CybertekForgotPassword {
         WebElement retrievePasswordButton= driver.findElement(By.cssSelector("button.radius"));
 
         //f. “Powered by Cybertek School” text
-        WebElement linkText =driver.findElement(By.xpath("//a[.='Cybertek School']"));
+        //WebElement linkText =driver.findElement(By.xpath("//a[.='Cybertek School']"));
         WebElement poweredByDiv= driver.findElement(By.xpath("//div[@style='text-align: center;']"));
 
-        System.out.println("linkText = "+linkText.getText()); // short cut linkText.soutv +enter
-        System.out.println("poweredByDiv = "+poweredByDiv.getText());
+        //System.out.println("linkText = "+linkText.getText()); // short cut linkText.soutv +enter
+        //System.out.println("poweredByDiv = "+poweredByDiv.getText());
 
 
         //4. Verify all WebElements are displayed.
+        // .isDisplayed--> returns true if given web element is displayed
+        // .isDisplayed--> returns false if given web element is NOT displayed
+        if (homeLink.isDisplayed() && passwordHeader.isDisplayed() && emailInputBox.isDisplayed()&& emailLabel.isDisplayed()
+            && retrievePasswordButton.isDisplayed()&& poweredByDiv.isDisplayed()){
+            System.out.println("All Web Elements are Displayed. Verification PASSED!");
+        }else{
+            System.out.println("one or more of the web elements are not displayed. Verification FAILED!!!");
+
+        }
 
 
     }
