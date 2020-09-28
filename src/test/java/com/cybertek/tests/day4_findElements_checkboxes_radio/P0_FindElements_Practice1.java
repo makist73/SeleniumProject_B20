@@ -30,5 +30,7 @@ public class P0_FindElements_Practice1 {
         }
 
         //4. Print out how many total link
+        int numberOfLinks= listOfLinks.size();
+        System.out.println("numberOfLinks = " + numberOfLinks);// shortcut: numberOfLinks.soutv+enter
     }
 }
