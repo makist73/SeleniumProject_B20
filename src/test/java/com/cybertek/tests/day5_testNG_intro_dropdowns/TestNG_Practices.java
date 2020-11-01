@@ -53,6 +53,10 @@ public class TestNG_Practices {
         searchBox.sendKeys("apple"+ Keys.ENTER);
 
         // make sure title contains apple
+        String  expectedInTitle = "apple";
+        String actualTitle= driver.getTitle();
+
+        Assert.assertTrue(actualTitle.contains(expectedInTitle), "Title does not contain search value.");
 
 
 
