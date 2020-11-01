@@ -19,14 +19,17 @@ public class TestNG_Introduction {
     public void setupMethod(){
         System.out.println("Before method is running...");
     }
+
     @AfterMethod
     public void tearDownMethod(){
         System.out.println("After method is running...");
     }
+
     @Test
     public void test1(){
         System.out.println("Test1 is running...");
     }
+
     @Test
     public void test2(){
         System.out.println("Test2 is running...");
