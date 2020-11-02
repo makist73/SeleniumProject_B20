@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import sun.awt.windows.ThemeReader;
@@ -15,10 +16,16 @@ public class DropdownTasks {
 
     WebDriver driver;
 
-    @BeforeMethod
-    public void setupMethod(){
+    @BeforeClass
+    public void setupClass(){
         // open a new browser
         driver = WebDriverFactory.getDriver("chrome");
+
+    }
+
+    @BeforeMethod
+    public void setupMethod(){
+
         // maximize th page
         driver.manage().window().maximize();
         // implicit wait
@@ -56,5 +63,40 @@ public class DropdownTasks {
 
     }
 
+    //TC #3: Selecting date on dropdown and verifying
+    @Test
+    public void test3_date_dropdown_verification(){
 
+        //locate all the web elements/dropdowns
+    Select yearDropdown =new Select(driver.findElement(By.xpath("//select[@id='year']")));
+    Select monthDropdown =new Select(driver.findElement(By.xpath("//select[@id='month']")));
+    Select dayDropdown =new Select(driver.findElement(By.xpath("//select[@id='day']")));
+
+
+
+        //3. Select “December 1st, 1921” and verify it is selected.
+        //Selecting  year using text
+        yearDropdown.selectByVisibleText("1921");
+
+        //Selecting month using by attribute value "value"
+        monthDropdown.selectByValue("11");
+
+        //Selecting  day 1 by using index number
+        dayDropdown.selectByIndex(0);
+
+        //creating expected values in one place
+        String expectedYear ="1921";
+        String expectedMonth ="December";
+        String expectedDay ="1";
+
+        // getting our actual values from the web page
+        String actualYear = yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+
+        //creating assert lines to compare actual vs expected
+        Assert.assertEquals(actualYear, expectedYear, "Actual year vs expected year not equal");
+        Assert.assertEquals(actualMonth, expectedMonth, " Actual month vs expected month not equal");
+        Assert.assertEquals(actualDay, expectedDay, "Actual day vs expected day not equal");
+    }
 }
