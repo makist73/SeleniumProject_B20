@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,17 +17,21 @@ public class DropdownTasks {
 
     WebDriver driver;
 
-    @BeforeClass
-    public void setupClass(){
-        // open a new browser
-        driver = WebDriverFactory.getDriver("chrome");
+   // @BeforeClass
+   // public void setupClass(){
+    //    driver = WebDriverFactory.getDriver("chrome");
+   // }
 
-    }
+    @AfterMethod
+    public void tearDownMethod (){
+    driver.close();
+}
 
     @BeforeMethod
     public void setupMethod(){
-
-        // maximize th page
+        // open a new browser
+        driver = WebDriverFactory.getDriver("chrome");
+        // maximize the page
         driver.manage().window().maximize();
         // implicit wait
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
