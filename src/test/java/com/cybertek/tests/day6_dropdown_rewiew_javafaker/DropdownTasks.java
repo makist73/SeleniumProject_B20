@@ -3,6 +3,7 @@ package com.cybertek.tests.day6_dropdown_rewiew_javafaker;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import sun.awt.windows.ThemeReader;
 
+import javax.xml.ws.WebEndpoint;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class DropdownTasks {
@@ -103,5 +106,60 @@ public class DropdownTasks {
         Assert.assertEquals(actualYear, expectedYear, "Actual year vs expected year not equal");
         Assert.assertEquals(actualMonth, expectedMonth, " Actual month vs expected month not equal");
         Assert.assertEquals(actualDay, expectedDay, "Actual day vs expected day not equal");
+    }
+
+    // TC #4: Selecting value from multiple select dropdown
+    @Test
+    public void test4_multiple_value_select_dropdown() throws InterruptedException {
+
+    //  3. Select all the options from multiple select dropdown.
+        // Locate the dropdown
+        Select multipleSelectDropdown= new Select(driver.findElement(By.xpath("//select[@name='Languages']")));
+
+        // Creating a list of web elements to store all of the options inside of this dropdown
+        List<WebElement> allOptions = multipleSelectDropdown.getOptions();
+
+        // Loop through the options to select all of them
+
+        for (WebElement eachOption : allOptions) {
+            Thread.sleep(500);
+            eachOption.click(); // this will click each option with every iteration
+
+            //  4. Print out all selected values.
+            System.out.println("Selected: " + eachOption.getText());
+
+            // Asserting the option is acctually selected or not
+            Assert.assertTrue(eachOption.isSelected(),"The option:"+eachOption.getText()+" is not selected!" );
+        }
+        
+    //  5. Deselect all values.
+        multipleSelectDropdown.deselectAll();
+
+        for (WebElement eachOption : allOptions){
+
+            //Assert.assertTrue(!eachOption.isSelected());// it will be false boolean value, with !we make it "true"
+
+            // AssertFalse method looks for "false" boolean value to pass the test.
+            Assert.assertFalse(eachOption.isSelected());
+        }
+
+    }
+
+    //TC #5: Selecting value from non-select dropdown
+    @Test
+    public void test5_html_dropdown_handling(){
+
+
+        // Locate the HTML dropdown as a regular web element
+        WebElement websiteDropdown= driver.findElement(By.xpath("//div[@class='dropdown']/a"));
+
+        //3. Click to non-select dropdown
+        websiteDropdown.click();
+        //4. Select Facebook from dropdown
+        WebElement facebookLink = driver.findElement(By.xpath("//a[.='Facebook']"));
+        facebookLink.click();
+
+        //5. Verify title is “Facebook - Log In or Sign Up
+
     }
 }
