@@ -10,9 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import sun.awt.windows.ThemeReader;
 
-import javax.xml.ws.WebEndpoint;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -25,10 +23,10 @@ public class DropdownTasks {
     //    driver = WebDriverFactory.getDriver("chrome");
    // }
 
-    @AfterMethod
-    public void tearDownMethod (){
-    driver.close();
-}
+   // @AfterMethod
+   // public void tearDownMethod (){
+    //driver.close();
+    //}
 
     @BeforeMethod
     public void setupMethod(){
@@ -160,7 +158,7 @@ public class DropdownTasks {
         //5. Verify title is “Facebook - Log In or Sign Up
         String actualTitle = driver.getTitle();
         String expectedTitle = "Facebook - Log In or Sign Up";
-        Assert.assertEquals(actualTitle,expectedTitle);
+        Assert.assertEquals(actualTitle,expectedTitle, "Actual title does not match expected title!");
 
     }
 }
