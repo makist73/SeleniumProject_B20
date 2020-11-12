@@ -1,6 +1,6 @@
 package com.cybertek.tests.day2_locators_getText_getAttribute;
 
-public class ClassNotes2 {
+public class ClassNotes4 {
 
     /*
     CLASSNOTES-4

@@ -1,6 +1,6 @@
 package com.cybertek.tests.day1_selenium_intro;
 
-public class ClassNotes1 {
+public class ClassNotes3 {
 
     /*
     CLASSNOTES-3

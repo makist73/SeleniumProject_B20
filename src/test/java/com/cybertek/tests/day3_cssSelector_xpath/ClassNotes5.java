@@ -1,6 +1,6 @@
 package com.cybertek.tests.day3_cssSelector_xpath;
 
-public class ClassNotes3 {
+public class ClassNotes5 {
     /*
     CLASSNOTES-5
 AUG 27TH, THURSDAY

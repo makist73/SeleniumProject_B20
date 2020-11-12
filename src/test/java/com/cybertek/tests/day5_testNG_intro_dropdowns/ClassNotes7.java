@@ -1,6 +1,6 @@
 package com.cybertek.tests.day5_testNG_intro_dropdowns;
 
-public class ClassNotes5 {
+public class ClassNotes7 {
     /*
     CLASSNOTES-7
 SEPTEMBER 12, SATURDAY

@@ -1,6 +1,6 @@
 package com.cybertek.tests.day4_findElements_checkboxes_radio;
 
-public class ClassNotes4 {
+public class ClassNotes6 {
     /*
     CLASSNOTES-6
 September 6TH, Sunday
