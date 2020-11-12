@@ -1,4 +1,4 @@
-package com.cybertek.tests.day4_findElements_checkboxes_radio;
+package com.cybertek.tests.day3_cssSelector_xpath;
 
 public class ClassNotes6 {
     /*

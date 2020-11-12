@@ -1,4 +1,4 @@
-package com.cybertek.tests.day6_dropdown_rewiew_javafaker;
+package com.cybertek.tests.day5_testNG_intro_dropdowns;
 
 public class ClassNotes8 {
     /*
@@ -294,5 +294,8 @@ How do we get all of the options in a dropdown?
 When you are asking a question:
 -> Make sure you send your whole code
 -> Make sure you send your whole console (picture)
+
+
      */
+
 }

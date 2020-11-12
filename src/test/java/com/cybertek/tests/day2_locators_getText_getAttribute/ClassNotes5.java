@@ -1,4 +1,4 @@
-package com.cybertek.tests.day3_cssSelector_xpath;
+package com.cybertek.tests.day2_locators_getText_getAttribute;
 
 public class ClassNotes5 {
     /*

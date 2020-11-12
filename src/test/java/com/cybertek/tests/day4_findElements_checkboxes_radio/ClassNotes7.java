@@ -1,4 +1,4 @@
-package com.cybertek.tests.day5_testNG_intro_dropdowns;
+package com.cybertek.tests.day4_findElements_checkboxes_radio;
 
 public class ClassNotes7 {
     /*

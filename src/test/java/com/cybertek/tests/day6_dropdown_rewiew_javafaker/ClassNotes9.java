@@ -1,8 +1,8 @@
-package com.cybertek.tests.day7_webtables;
+package com.cybertek.tests.day6_dropdown_rewiew_javafaker;
 
 public class ClassNotes9 {
     /*
-    CLASSNOTES-9
+   CLASSNOTES-9
 SEPTEMBER 20TH, SUNDAY
 
 #1 recap
@@ -191,8 +191,5 @@ NullPointerException
 -> Most of the time you get this exception in Selenium because have some kind of a driver problem.
 -> Usually when your driver has multiple instances or it does not connect well with the test automation flow you created.
 -> In this case, your driver value will be null --> driver == null
-
-
      */
-
 }
