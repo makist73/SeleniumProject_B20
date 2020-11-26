@@ -47,9 +47,9 @@ public class SmartBearUtilities {
         //List<WebElement> namesList = driver.findElements(By.xpath("//tr/td[2]"));
 
 
-        //type iter, press tab for "for each" loop short cut.
 
-        for (WebElement each : namesList) {
+
+        for (WebElement each : namesList) {   //type iter, press tab for "for each" loop short cut.
 
             if (each.getText().equals(name)){
                 Assert.assertTrue(each.getText().equals(name));
