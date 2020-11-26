@@ -7,6 +7,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -35,9 +36,13 @@ public class Alert3Practice {
 
     @Test
     public void P3_prompt_alert_practice(){
-        WebElement promtAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        WebElement promptAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
 
-        promtAlertButton.click();
+        //WebElement resultText = driver.findElement(By.id("result"));
+        //System.out.println(resultText.isDisplayed());
+        //Assert.assertFalse(resultText.isDisplayed());
+
+        promptAlertButton.click();
 
         // using Alert class to handle alert
         Alert alert =driver.switchTo().alert();
@@ -46,13 +51,20 @@ public class Alert3Practice {
         BrowserUtils.wait(2);
 
         // sending keys to the "prompt" alert
-        alert.sendKeys("somtihing is happening");
+        String input ="something is happening";
+        alert.sendKeys(input);
 
         // Accepting the alert
         alert.accept();
 
+        WebElement resultText =driver.findElement(By.id("result"));
 
+        Assert.assertTrue(resultText.isDisplayed(),"The result text is not displayed. Verification FAILED!!!");
 
+        // Verify that the result text CONTAINS the entered input
+        String actual = resultText.getText();
+
+        Assert.assertTrue(actual.contains(input), "The result DOES NOT contain the input. Verification FAILED!!!");
     }
 
 
