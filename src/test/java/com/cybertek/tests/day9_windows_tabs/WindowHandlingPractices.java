@@ -1,10 +1,14 @@
 package com.cybertek.tests.day9_windows_tabs;
 
 import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class WindowHandlingPractices {
@@ -34,6 +38,29 @@ public class WindowHandlingPractices {
         @Test
         public void p5_handling_windows(){
 
+        String actualTitle = driver.getTitle();
+        System.out.println("actualTitle = " + actualTitle);
+
+            Assert.assertTrue(actualTitle.equals("Practice"));
+
+            WebElement clickHereLink = driver.findElement(By.linkText("Click Here"));
+            clickHereLink.click();
+
+            String titleAfterClick = driver.getTitle();
+            System.out.println("titleAfterClick = " + titleAfterClick);
+
+            String mainHandle = driver.getWindowHandle();
+            System.out.println("mainHandle = " + mainHandle);
+
+            //Set allows only unique values
+            Set<String> windowHandles = driver.getWindowHandles(); // Shortcut: alt+Enter to get this
+            // we loop through the set of window handles so that we can get the window handle of the other windows
+            // then using switchTo().window() method we switch to the other windows
+
+            for (String each : windowHandles) {   // Shortcut: type "iter" to get this
+                driver.switchTo().window(each);
+                System.out.println("Current title= "+ driver.getTitle());
+            }
 
         }
 
