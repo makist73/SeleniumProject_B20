@@ -40,6 +40,7 @@ public class ReadingProperties {
         //This will read the given "key's" value and return it  as a String
         System.out.println("ConfigurationReader.getProperty(\"browser\") = " + ConfigurationReader.getProperty("browser"));
         System.out.println("ConfigurationReader.getProperty(\"smartbearUrl\") = " + ConfigurationReader.getProperty("smartbearUrl"));
+
     }
 
 }
