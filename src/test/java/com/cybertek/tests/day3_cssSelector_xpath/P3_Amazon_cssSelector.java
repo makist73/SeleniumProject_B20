@@ -1,6 +1,7 @@
 package com.cybertek.tests.day3_cssSelector_xpath;
 
 import com.cybertek.utilities.WebDriverFactory;
+import com.google.common.base.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -21,11 +22,22 @@ public class P3_Amazon_cssSelector {
         //WebElement searchBox=driver.findElement(By.cssSelector("input[id='twotabsearchtextbox']"));
         WebElement searchBox=driver.findElement(By.cssSelector("input#twotabsearchtextbox"));
         searchBox.sendKeys("wooden spoon"+ Keys.ENTER);
-        // 4. Verify title contains search term
+        
         // expected
         // actual
+        String expectedTitle = "Amazon.com : wooden spoon";
+        String actualTitle=driver.getTitle();
+        
+        // 4. Verify title contains search term
         // create if condition
-
-
+        
+        if (actualTitle.contains("search")){
+            System.out.println("yes it contains search term");
+            System.out.println("actualTitle = " + actualTitle);
+        }else{
+            System.out.println("Title does not contains search term");
+            System.out.println("actualTitle = " + actualTitle);
+        }
+        
     }
 }

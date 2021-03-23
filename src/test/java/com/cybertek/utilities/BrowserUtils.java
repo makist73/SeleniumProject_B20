@@ -31,7 +31,7 @@ public class BrowserUtils {
     }
 
 
-    /*
+    /**
     Create a utility method named: wait
     static method
     @param sec
@@ -44,8 +44,10 @@ public class BrowserUtils {
         try {
             Thread.sleep(1000 * sec);
         } catch (InterruptedException e) {
-            System.out.println("Interrupted exception caught");
+            e.printStackTrace();
+            //System.out.println("Interrupted exception caught");
         }
+
     }
 
 }

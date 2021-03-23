@@ -21,8 +21,8 @@ public class P0_FindElements_Practice1 {
 
         //3. Print out telementshe texts of all links
         //Locating all the links on the page and storing into a list of WebElements
-        List<WebElement>listOfLinks = driver.findElements(By.xpath("//body//a"));
-            //shortcut:Alt+enter
+        List<WebElement> listOfLinks = driver.findElements(By.xpath("//body//a"));
+        //shortcut:Alt+enter
         // Looping through the list of web elements we just created above
         for (WebElement eachLink :listOfLinks){
           // Getting the list of each element in each iteration, and printing the values

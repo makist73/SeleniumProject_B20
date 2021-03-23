@@ -10,7 +10,7 @@ public class P1_GoogleTitleVerification {
 
         // TC #1: Google Title Verification
         // 1. Open Chrome browser
-    // set up the browser driver
+        // set up the browser driver
         WebDriverManager.chromedriver().setup(); // BoniGarcia method
     //if you are using browser drivers locally, you need to use System.setProperty everytime
     //  we use WebDriverManager
