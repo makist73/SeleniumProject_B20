@@ -20,7 +20,7 @@ public class WebTablePractice {
     WebDriver driver;
 
     @BeforeMethod
-    public void setUpMethod(){
+    public void setUp(){
         //1. Open browser and login to Smartbear software
         driver= WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
